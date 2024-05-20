@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>booleans</title>
+  </head>
+  <body>
+    <script>
+      /*
+      true;
+      false;
+
+      console.log(3 < 5);
+      console.log(5 === "5.00");
+
+      if (false) {
+        console.log("hello");
+      } else {
+        console.log("else");
+      }
+
+      const age = 15;
+
+      if (age >= 16) {
+        console.log("You can drive");
+        console.log("Congrats");
+      } else if (age >= 14) {
+        console.log("Almost there!");
+      } else {
+        console.log("You can not drive");
+      }
+      */
+      console.log(true && true);
+      console.log(0.2 >= 0 && 0.2 < 1 / 3);
+
+      function createHelloWorld() {
+        return function () {
+          return "Hello World";
+        };
+      }
+
+      const helloFunction = createHelloWorld();
+
+      console.log(helloFunction());
+
+      console.log(true || false);
+      console.log(!false);
+
+      let temperature = 25;
+
+      if (temperature > 30) {
+        console.log("Слишком жарко!"); // Если температура выше 30 градусов, выводим сообщение
+      } else if (temperature < 15) {
+        console.log("Слишком холодно!"); // Если температура ниже 15 градусов, выводим другое сообщение
+      } else {
+        console.log("Температура в норме"); // Если температура находится в пределах от 15 до 30 градусов, выводим третье сообщение
+      }
+
+      let age = 20;
+
+      // Проверяем, является ли возраст больше или равен 18
+      // Если да, выводим "Совершеннолетний", иначе "Несовершеннолетний"
+      let message = age >= 15 ? "Совершеннолетний" : "Несовершеннолетний";
+
+      console.log(message);
+
+      function createCounter(n) {
+        // Инициализируем переменную счетчика начальным значением n
+        let counter = n;
+
+        // Определяем и возвращаем внутреннюю функцию-счетчик
+        return function () {
+          // Возвращаем текущее значение счетчика и затем увеличиваем его на 1 для следующего вызова
+          return counter++;
+        };
+      }
+
+      // Пример использования:
+      const counter = createCounter(10); // Инициализируем счетчик начальным значением 10
+
+      console.log(counter()); // Вывод: 10
+      console.log(counter()); // Вывод: 11
+      console.log(counter()); // Вывод: 12
+      console.log(counter());
+      console.log(counter());
+      console.log(counter()); // Вывод: 10
+      console.log(counter()); // Вывод: 11
+      console.log(counter()); // Вывод: 12
+      console.log(counter());
+      console.log(counter());
+      // и так далее...
+
+      function wait(val) {
+        return {
+          resolve: function (callback) {
+            // Вызываем функцию обратного вызова с переданным значением val
+            callback(val);
+          },
+          reject: function (callback) {
+            // Вызываем функцию обратного вызова с переданным значением val
+            // Обратите внимание, что здесь используется тернарный оператор для инвертирования значения val
+            callback(val ? false : true);
+          },
+        };
+      }
+
+      // Пример использования функции ожидания
+      const result = wait(42);
+
+      result.resolve(function (value) {
+        console.log("Resolved with value:", value); // Вывод: Resolved with value: 42
+      });
+
+      result.reject(function (value) {
+        console.log("Rejected with value:", value); // Не будет вызвано в этом примере
+      });
+
+      if (!(age >= 14 && age <= 90)) {
+        // Ваш код, который будет выполнен, если age находится в диапазоне от 14 до 90
+      } else {
+        // Ваш код, который будет выполнен, если age не находится в диапазоне от 14 до 90
+      }
+      /*
+      let value = NaN;
+
+      value &&= 10;
+      value ||= 20;
+      value &&= 30;
+      value ||= 40;
+
+      alert(value);
+      alert(null || (2 && 3) || 4);
+      alert(alert(1) && alert(2));
+      alert(1 && null && 2);
+      alert(alert(1) || 2 || alert(3));
+      alert(null || 2 || undefined);
+      */
+      /*
+      let login = prompt("Введите ваш логин:", "");
+
+      if (login === "Админ") {
+        let password = prompt("Введите ваш пароль:", "");
+
+        if (password === "Я главный") {
+          alert("Здравствуйте!");
+        } else if (password === null || password === "") {
+          aleret("Отменено");
+        } else {
+          alert("Неверный пароль");
+        }
+      } else if (login === null || login === "") {
+        alert("Отменено");
+      } else {
+        alert("Я вас не знаю");
+      }
+      */
+      /*
+      if (0) {
+        console.log("truthy");
+      }
+
+      const cartQuantity = 5;
+
+      if (cartQuantity > 4) {
+        console.log("cart has products");
+      }
+
+      console.log(!0);
+
+      const variable1 = undefined;
+      console.log(variable1);
+      */
+
+      const resullt = 0 ? "truthy" : "falsy";
+      console.log(resullt);
+
+      false && console.log("hello");
+
+      const messaage = 5 && "hello";
+      console.log(messaage);
+
+      const currency = undefined || "EUR";
+      console.log(currency);
+    </script>
+  </body>
+</html>
